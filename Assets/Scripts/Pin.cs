@@ -4,10 +4,12 @@ public class Pin : MonoBehaviour
 {
     public float pinFallThreshold; 
     public float toppleLife = 3f; 
-    public int tries = 10; 
-
+    public int tries = 10;
+    public bool isFallen = false;
     private Quaternion defaultRotation; 
     private int currentTries; 
+
+    public PinsScore score;
 
     protected void Awake()
     {
@@ -33,7 +35,7 @@ public class Pin : MonoBehaviour
         currentTries++;
         if (!Mathf.Abs(Quaternion.Dot(defaultRotation, transform.localRotation)).ApproxEquals(1f, pinFallThreshold))
         {
-            Invoke("HidePin", toppleLife); 
+           //Invoke("HidePin", toppleLife); 
         }
         else if (currentTries > tries)
         {

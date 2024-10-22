@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BackStop
   - Ball
+  - CountPoint
   layers:
   - Default
   - TransparentFX
