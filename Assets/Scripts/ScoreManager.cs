@@ -31,6 +31,7 @@ public class ScoreManager : BaseUI
     public TextMeshProUGUI finalScoreText;
 
     public PinGroup pinGroup;
+    public PinsScore pinsScore;
 
     private void Awake()
     {
@@ -99,6 +100,7 @@ public class ScoreManager : BaseUI
             {
                 ActivateFrame(currentFrame);
                 pinGroup.ResetPositions();
+                pinsScore.ResetPinUI();
             }
         }
 

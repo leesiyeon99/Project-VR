@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PinsScore : MonoBehaviour
 {
     public Pin[] pins; 
-    private Coroutine scoreRecordCoroutine; 
+    private Coroutine scoreRecordCoroutine;
+    public Button[] pinUIImages;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -46,21 +48,42 @@ public class PinsScore : MonoBehaviour
     {
         int fallenPinCount = 0;
 
-        foreach (var pin in pins)
+        for (int i = 0; i < pins.Length; i++)
         {
-            float angleDifferenceX = Quaternion.Angle(pin.transform.localRotation, Quaternion.Euler(0, 0, 0));
-            float angleDifferenceZ = Quaternion.Angle(pin.transform.localRotation, Quaternion.Euler(0, 0, 0));
-
+            float angleDifferenceX = Quaternion.Angle(pins[i].transform.localRotation, Quaternion.Euler(0, 0, 0));
+            float angleDifferenceZ = Quaternion.Angle(pins[i].transform.localRotation, Quaternion.Euler(0, 0, 0));
 
             if (angleDifferenceX >= 30 || angleDifferenceZ >= 30)
             {
-                //Debug.Log($"{pin.name} ÇÉ ³Ñ¾îÁü");
-                pin.isFallen = true; 
+                pins[i].isFallen = true;
                 fallenPinCount++;
+
+                if (pinUIImages != null && i < pinUIImages.Length)
+                {
+                    pinUIImages[i].image.color = Color.gray;
+                }
+            }
+            else
+            {
+                pins[i].isFallen = false;
+
+                if (pinUIImages != null && i < pinUIImages.Length)
+                {
+                    pinUIImages[i].image.color = Color.white; 
+                }
             }
         }
 
-        return fallenPinCount; 
+        return fallenPinCount;
+    }
+
+
+    public void ResetPinUI()
+    {
+        for (int i = 0; i < pinUIImages.Length; i++)
+        {
+            pinUIImages[i].image.color = Color.white; 
+        }
     }
 
 }
