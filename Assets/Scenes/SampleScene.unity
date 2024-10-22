@@ -1351,7 +1351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -2201,7 +2201,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54567733306659233, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 872097571216925020, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Name
@@ -3807,7 +3807,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54567733306659233, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 872097571216925020, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Name
@@ -6564,7 +6564,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54567733306659233, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 872097571216925020, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Name
@@ -8462,7 +8462,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54567733306659233, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 872097571216925020, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Name
@@ -10369,7 +10369,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54567733306659233, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 872097571216925020, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Name
@@ -11489,7 +11489,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54567733306659233, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 872097571216925020, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Name
@@ -18948,7 +18948,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54567733306659233, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 872097571216925020, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Name
@@ -20359,7 +20359,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54567733306659233, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 872097571216925020, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Name
@@ -21680,7 +21680,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54567733306659233, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 872097571216925020, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Name
@@ -23416,7 +23416,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54567733306659233, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 872097571216925020, guid: bf9397e45f8651a46a81ba9ce0e5e86f, type: 3}
       propertyPath: m_Name
