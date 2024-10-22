@@ -35,6 +35,9 @@ public class ScoreManager : BaseUI
     public GameObject spareUI;
     public GameObject strikeUI;
 
+    public AudioClip recordScoreAudio;
+    public AudioSource audioSource;
+
     private void Awake()
     {
         if (_instance == null)
@@ -177,6 +180,9 @@ public class ScoreManager : BaseUI
 
             UpdateScoreUI($"{currentFrame} Score", frameScores[currentFrame - 1]);
         }
+
+        audioSource.clip = recordScoreAudio;
+        audioSource.Play();
     }
 
     private void Spare()
