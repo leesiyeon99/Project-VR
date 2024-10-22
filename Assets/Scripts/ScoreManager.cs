@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,17 +20,20 @@ public class ScoreManager : BaseUI
     }
 
     private int currentFrame = 1;
-    private int rollCount = 0; 
-    private int[] frameScores = new int[10]; 
-    private int[] rolls = new int[21]; 
-    private int fallenPinCount = 0; 
+    private int rollCount = 0;
+    private int[] frameScores = new int[10];
+    private int[] rolls = new int[21];
+    private int fallenPinCount = 0;
 
-    public Button startButton; 
-    public Button nextBowlingButton; 
+    public Button startButton;
+    public Button nextBowlingButton;
     public TextMeshProUGUI finalScoreText;
 
     public PinGroup pinGroup;
     public PinsScore pinsScore;
+
+    public GameObject spareUI;
+    public GameObject strikeUI;
 
     private void Awake()
     {
@@ -61,11 +63,11 @@ public class ScoreManager : BaseUI
 
     public void StartGame()
     {
-        currentFrame = 1; 
-        rollCount = 0; 
-        fallenPinCount = 0; 
+        currentFrame = 1;
+        rollCount = 0;
+        fallenPinCount = 0;
         ActivateFrame(currentFrame);
-        nextBowlingButton.interactable = true; 
+        nextBowlingButton.interactable = true;
         finalScoreText.text = "";
         startButton.interactable = false;
     }
@@ -111,28 +113,35 @@ public class ScoreManager : BaseUI
 
     private void CalculateFinalScore()
     {
-        int totalScore=frameScores[frameScores.Length - 1];
-        finalScoreText.text = $"{totalScore}"; 
+        int totalScore = frameScores[frameScores.Length - 1];
+        finalScoreText.text = $"{totalScore}";
     }
 
 
     private void RecordScore(int pins)
     {
+        if (pins > 10) return;
         if (rollCount == 0)
         {
             rolls[(currentFrame - 1) * 2] += pins;
             UpdateScoreUI($"{currentFrame}-1 Score", rolls[(currentFrame - 1) * 2]);
 
-            if (pins == 10) 
+            if (pins == 10)
             {
                 Strike();
                 UpdateScoreUI($"{currentFrame}-2 Score", "/");
                 rollCount = 2;
+                if (currentFrame == 1) 
+                { 
+                    frameScores[currentFrame - 1] = 10;
+                    UpdateScoreUI($"{currentFrame} Score", frameScores[currentFrame - 1]);
+                    return;
+                }
                 frameScores[currentFrame - 1] = frameScores[currentFrame - 2] + 10;
                 UpdateScoreUI($"{currentFrame} Score", frameScores[currentFrame - 1]);
             }
         }
-        else if (rollCount == 1) 
+        else if (rollCount == 1)
         {
             rolls[(currentFrame - 1) * 2 + 1] += pins - rolls[(currentFrame - 1) * 2];
             UpdateScoreUI($"{currentFrame}-2 Score", rolls[(currentFrame - 1) * 2 + 1]);
@@ -173,11 +182,27 @@ public class ScoreManager : BaseUI
     private void Spare()
     {
         Debug.Log("스페어");
+        StartCoroutine(SpareRoutine());
+    }
+
+    IEnumerator SpareRoutine()
+    {
+        spareUI.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        spareUI.gameObject.SetActive(false);
     }
 
     private void Strike()
     {
         Debug.Log("스트라이크");
+        StartCoroutine(StrikeRoutine());
+    }
+
+    IEnumerator StrikeRoutine()
+    {
+        strikeUI.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        strikeUI.gameObject.SetActive(false);
     }
 
 
